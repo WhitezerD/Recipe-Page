@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "Young Serif";
+  src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fonts */
+  --FF-PRIMARY: "Outfit";
+  --FF-SECONDARY: "Young Serif";
+  /* Colors */
+  --BGCOLOR: hsl(30, 54%, 90%);
+  --BGCOLOR-CARD: hsl(0, 0%, 100%);
+  --BGCOLOR-BOX: hsl(330, 100%, 98%);
+
+  --COLOR-FN: hsl(30, 10%, 34%);
+  --COLOR-FB: hsl(24, 5%, 18%);
+
+  --COLOR-FT: hsl(13, 28%, 14%);
+  --COLOR-FT-BOX: hsl(332, 51%, 32%);
+
+  --COLOR-LINE: hsl(30, 18%, 87%);
+  /* Spacing */
+  --MARGIN: 1em;
+}
+
+html {
+  background-color: var(--BGCOLOR);
+  font-size: 1em;
+}
+
+img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.main--box-container {
+  width: 700px;
+  background-color: var(--BGCOLOR-CARD);
+  margin: 10vh auto;
+  padding: 2em;
+  font-family: var(--FF-PRIMARY);
+  border-radius: 1em;
+  color: var(--COLOR-FN);
+}
+
+h1,
+h2 {
+  margin: var(--MARGIN) 0;
+  font-family: var(--FF-SECONDARY);
+}
+
+h1 {
+  color: var(--COLOR-FB);
+}
+
+h2 {
+  color: var(--COLOR-FT-BOX);
+}
+
+.text--description {
+  margin-top: var(--MARGIN);
+  line-height: 1.5em;
+}
+
+.prep-time {
+  margin-top: 1.5em;
+  background-color: var(--BGCOLOR-BOX);
+  padding: 1.5em;
+}
+
+.prep-time-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--COLOR-FT-BOX);
+}
+
+ul,
+ol {
+  list-style-position: outside;
+  margin-top: var(--MARGIN);
+  margin-left: 1.5em;
+}
+
+ul {
+  line-height: 2em;
+}
+
+ol {
+  line-height: 1.5em;
+}
+
+.span--firstword {
+  font-weight: bold;
+}
+
+.li--instructions {
+  margin-top: 0.6em;
+}
+
+li::marker {
+  color: var(--COLOR-FT-BOX);
+}
+
+.instructions,
+.ingredients {
+  border-bottom: 1px solid var(--COLOR-LINE);
+  padding-bottom: 2em;
+}
+
+.table--nutrition {
+  margin-top: 1em;
+  width: 100%;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+  margin-left: var(--MARGIN);
+  border-bottom: 1px solid var(--COLOR-LINE);
+  margin-bottom: var(--MARGIN);
+  padding-bottom: var(--MARGIN);
+}
+
+td {
+  flex: 1;
+}
+
+.nutrition-amount {
+  font-weight: bold;
+  color: var(--COLOR-FT-BOX);
+}
+
+tr:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+
+/* MEDIA 375px */
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 0.8em;
+  }
+  .main--box-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sub--box-container {
+    padding: 1.5em;
+  }
+
+  ul,
+  ol {
+    list-style-position: outside;
+  }
+
+  ol {
+    margin-left: 1.5em;
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 0.5em;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li:before {
+    content: "•";
+    margin-right: 1em;
+  }
+
+  ul .span--firstword {
+    margin-right: 0.5em;
+  }
+
+  li {
+    text-indent: 0;
+  }
+}
